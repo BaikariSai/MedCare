@@ -622,7 +622,7 @@ function AuthPage({ onLogin, navigate }) {
 
   return (<section className="py-20 bg-gray-50 min-h-[70vh]"><div className="container mx-auto px-4 max-w-md">
     <Card className="border-0 shadow-lg"><CardHeader className="text-center"><div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><User className="h-8 w-8 text-blue-600" /></div><CardTitle className="text-2xl">Welcome to MedCare</CardTitle><CardDescription>Sign in to manage your appointments</CardDescription></CardHeader>
-    <CardContent><Tabs value={tab} onValueChange={setTab}><TabsTrigger value="login">Login</TabsTrigger>
+    <CardContent><Tabs value={tab} onValueChange={setTab}><TabsList className="grid w-full align-items:center grid-cols-2 mb-6"><TabsTrigger value="login">Login</TabsTrigger></TabsList>
       <form onSubmit={handleSubmit} className="space-y-4">
         {tab === 'register' && <div className="space-y-2"><Label>Full Name</Label><Input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} /></div>}
         <div className="space-y-2"><Label>Email</Label><Input type="email" required value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} /></div>
